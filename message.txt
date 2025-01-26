@@ -1,0 +1,258 @@
+
+void main(void)
+
+{
+  ushort *puVar1;
+  uint *puVar2;
+  uint uVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  uint uVar8;
+  uint *puVar9;
+  uint uVar10;
+  uint uVar11;
+  uint *puVar12;
+  uint *puVar13;
+  uint uVar14;
+  undefined *puVar15;
+  ushort *puVar16;
+  byte bVar17;
+  uint local_e0;
+  uint uStack_dc;
+  uint uStack_d8;
+  uint uStack_d4;
+  uint local_d0;
+  byte bStack_cc;
+  byte bStack_cb;
+  short sStack_ca;
+  uint *puStack_c8;
+  uint local_90 [6];
+  uint *puStack_78;
+  undefined4 uStack_74;
+  undefined4 uStack_70;
+  undefined4 uStack_6c;
+  undefined4 uStack_68;
+  undefined4 uStack_64;
+  undefined4 uStack_60;
+  undefined4 uStack_5c;
+  undefined4 uStack_58;
+  undefined4 uStack_54;
+  undefined4 uStack_50;
+  undefined4 uStack_4c;
+  undefined4 uStack_48;
+  undefined4 uStack_44;
+  undefined auStack_40 [4];
+  uint local_3c;
+  ushort *puStack_38;
+  uint uStack_34;
+  undefined4 uStack_30;
+  
+  gp = &__global_pointer$;
+  puVar15 = (undefined *)0x0;
+  local_90[4] = 0;
+  puVar2 = (uint *)&DAT_00000004;
+  puVar9 = local_90 + 4;
+  do {
+    puVar12 = puVar2;
+    if ((uint *)0xfff < puVar2) {
+      puVar12 = (uint *)0x1000;
+    }
+    ecall();
+    puVar15 = (undefined *)((int)puVar9 + (int)puVar15);
+    if (puVar9 < puVar12) break;
+    puVar2 = (uint *)((int)puVar2 - (int)puVar9);
+    puVar9 = (uint *)((int)puVar9 * 2);
+  } while (puVar2 != (uint *)0x0);
+  puVar9 = (uint *)"risc0_zkvm_platform::syscall::nr::SYS_READ";
+  if (puVar15 != (undefined *)0x4) {
+LAB_002016e0:
+    puStack_c8 = puVar9;
+    local_90[5] = 0;
+    local_90[4] = 0x80000004;
+LAB_002016ec:
+    puStack_78 = puStack_c8;
+    uVar4 = core::result::unwrap_failed
+                      ("called `Result::unwrap()` on an `Err` value/src/risc0/zkvm/src/guest/env/mod.rs"
+                       ,0x2b,local_90 + 4,.Lanon.fad58de7366495db4650cfefac2fcd61.0,
+                       .Lanon.fad58de7366495db4650cfefac2fcd61.17);
+LAB_00201720:
+                    /* WARNING: Subroutine does not return */
+    core::panicking::panic_bounds_check(uVar4,0x10,.Lanon.fad58de7366495db4650cfefac2fcd61.19);
+  }
+  uVar3 = 0;
+  uVar4 = uVar3;
+  if (false) {
+    uVar4 = 0x100000;
+  }
+  if (true) {
+    return;
+  }
+  puVar16 = (ushort *)
+            ((((risc0_zkvm_platform::heap::bump::HEAP_POS & 3) == 0) - 1 &
+             4 - (risc0_zkvm_platform::heap::bump::HEAP_POS & 3)) +
+            risc0_zkvm_platform::heap::bump::HEAP_POS);
+  uVar8 = (int)puVar16 + uVar4;
+  if (uVar8 < 0xc000001) {
+    risc0_zkvm_platform::heap::bump::HEAP_POS = uVar8;
+    if (puVar16 == (ushort *)0x0) goto LAB_00201748;
+    uStack_34 = 0;
+    local_3c = uVar4;
+    puStack_38 = puVar16;
+    do {
+      uVar4 = uStack_34;
+      puVar15 = (undefined *)0x0;
+      local_90[4] = 0;
+      puVar12 = (uint *)&DAT_00000004;
+      uVar8 = 1;
+      puVar2 = local_90 + 4;
+      do {
+        puVar13 = puVar12;
+        if ((uint *)0xfff < puVar12) {
+          puVar13 = (uint *)0x1000;
+        }
+        uVar7 = uVar8;
+        if (0x3ff < uVar8) {
+          uVar7 = 0x400;
+        }
+        ecall();
+        puVar15 = (undefined *)((int)puVar2 + (int)puVar15);
+        puVar9 = (uint *)"risc0_zkvm_platform::syscall::nr::SYS_READ";
+        if (puVar2 < puVar13) break;
+        uVar7 = (uint)puVar2 >> 2;
+        puVar12 = (uint *)((int)puVar12 - (int)puVar2);
+        uVar8 = uVar8 - uVar7;
+        puVar9 = puVar2;
+        puVar2 = (uint *)((int)puVar2 * 2);
+      } while (puVar12 != (uint *)0x0);
+      if (puVar15 != (undefined *)0x4) goto LAB_002016e0;
+      bVar17 = 0;
+      if (false) {
+        uStack_74 = 0;
+        puStack_78 = (uint *)0x0;
+        local_90[4] = 1;
+        puVar9 = local_90;
+        uVar7 = serde::de::Error::invalid_value(&local_d0,local_90 + 4,puVar9);
+        bVar17 = bStack_cc;
+        if (local_d0 != 0x80000007) {
+          local_90[5] = (uint)bStack_cb << 8 | (int)sStack_ca << 0x10 | (uint)bStack_cc;
+          local_90[4] = local_d0;
+          goto LAB_002016ec;
+        }
+      }
+      if (uVar4 == local_3c) {
+        alloc::raw_vec::RawVec<T,A>::grow_one(&local_3c,uVar7,(uint)puVar9);
+        puVar16 = puStack_38;
+      }
+      puVar1 = puStack_38;
+      uVar3 = uVar3 - 1;
+      *(byte *)((int)puVar16 + uVar4) = bVar17;
+      uStack_34 = uVar4 + 1;
+    } while (uVar3 != 0);
+    if (true) {
+      return;
+    }
+    memset(&bStack_cc,0,0x3c);
+    uVar7 = 0;
+    local_d0 = (uint)*puVar1 |
+               (uint)*(byte *)(puVar1 + 1) << 0x10 | (uint)*(byte *)((int)puVar1 + 3) << 0x18;
+    local_90[0] = 3;
+    local_90[1] = 7;
+    local_90[2] = 0xb;
+    local_90[3] = 0x13;
+    puVar9 = &local_d0;
+    uVar4 = 0x67452301;
+    uVar3 = 0x10325476;
+    uVar8 = 0x98badcfe;
+    uStack_dc = 0xefcdab89;
+    do {
+      uVar14 = uStack_dc;
+      uVar10 = uVar8;
+      uVar11 = uVar3;
+      uVar3 = uVar7 & 3;
+      uVar7 = uVar7 + 1;
+      uVar4 = (uVar11 & ~uVar14 | uVar10 & uVar14) + uVar4 + *puVar9;
+      uStack_dc = uVar4 << (local_90[uVar3] & 0x1f) | uVar4 >> (-local_90[uVar3] & 0x1f);
+      puVar9 = puVar9 + 1;
+      uVar4 = uVar11;
+      uVar3 = uVar10;
+      uVar8 = uVar14;
+    } while (uVar7 != 0x10);
+    uVar3 = 0;
+    local_90[4] = 0;
+    local_90[5] = 4;
+    puStack_78 = (uint *)&DAT_00000008;
+    uStack_74 = 0xc;
+    uStack_70 = 1;
+    uStack_6c = 5;
+    uStack_68 = 9;
+    uStack_64 = 0xd;
+    uStack_60 = 2;
+    uStack_5c = 6;
+    uStack_58 = 10;
+    uStack_54 = 0xe;
+    uStack_50 = 3;
+    uStack_4c = 7;
+    uStack_48 = 0xb;
+    uStack_44 = 0xf;
+    local_3c = 3;
+    puStack_38 = (ushort *)0x5;
+    uStack_34 = 9;
+    uStack_30 = 0xd;
+    puVar9 = local_90 + 4;
+    do {
+      uStack_d8 = uStack_dc;
+      uStack_d4 = uVar14;
+      local_e0 = uVar10;
+      uVar4 = *puVar9;
+      if (0xf < uVar4) goto LAB_00201720;
+      uVar8 = uVar3 & 3;
+      uVar3 = uVar3 + 1;
+      uVar4 = uVar11 + ((local_e0 | uStack_d4) & uStack_d8 | local_e0 & uStack_d4) + 0x5a827999 +
+              (&local_d0)[uVar4];
+      uStack_dc = uVar4 << ((&local_3c)[uVar8] & 0x1f) | uVar4 >> (-(&local_3c)[uVar8] & 0x1f);
+      puVar9 = puVar9 + 1;
+      uVar10 = uStack_d4;
+      uVar14 = uStack_d8;
+      uVar11 = local_e0;
+    } while (uVar3 != 0x10);
+    iVar5 = memcmp(&local_e0,&$d.369,0x10);
+    if (iVar5 != 0) {
+      return;
+    }
+    local_90[4] = 1;
+    ecall();
+    uVar4 = (uint)DAT_00214d0c;
+    if (uVar4 < 0x3c) {
+      uVar8 = uVar4 + 4;
+      (&DAT_00214ccf)[uVar4] = 0;
+      (&DAT_00214cce)[uVar4] = 0;
+      (&DAT_00214ccd)[uVar4] = 0;
+      (&DAT_00214ccc)[uVar4] = 1;
+LAB_002016a4:
+      DAT_00214d0c = (byte)uVar8;
+      return;
+    }
+    memcpy(&DAT_00214ccc + uVar4,local_90 + 4,-uVar4 + 0x40);
+    DAT_00214cc8 = DAT_00214cc8 + 1;
+    iVar5 = (((risc0_zkvm_platform::heap::bump::HEAP_POS & 3) == 0) - 1 &
+            4 - (risc0_zkvm_platform::heap::bump::HEAP_POS & 3)) +
+            risc0_zkvm_platform::heap::bump::HEAP_POS;
+    uVar3 = iVar5 + 0x40;
+    if (uVar3 < 0xc000001) {
+      uVar8 = uVar4 - 0x3c;
+      ecall();
+      risc0_zkvm_platform::heap::bump::HEAP_POS = uVar3;
+      DAT_00214cc4 = iVar5;
+      memcpy(&DAT_00214ccc,auStack_40 + (uVar8 & 0xffffffc0) + -uVar4,uVar8);
+      goto LAB_002016a4;
+    }
+  }
+  uVar4 = sys_panic();
+LAB_00201748:
+  uVar6 = __rust_alloc_error_handler(uVar4);
+                    /* WARNING: Subroutine does not return */
+  __rg_oom(uVar6);
+}
+
